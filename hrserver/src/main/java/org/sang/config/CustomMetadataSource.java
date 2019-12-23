@@ -22,6 +22,13 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
     @Autowired
     MenuService menuService;
     AntPathMatcher antPathMatcher = new AntPathMatcher();
+    /**
+     * @Author qinhaohao
+     * @Description //查询访问请求需要的权限
+     * @Date 14:00 2019-12-23
+     * @Param [o]
+     * @return java.util.Collection<org.springframework.security.access.ConfigAttribute>
+     **/
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) {
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
